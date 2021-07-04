@@ -12,3 +12,18 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+      function addImage() {
+        let html = "";
+
+        for (var key in images) {
+          html = html + `<li><img src=${images[key].url}></li>`;
+        }
+
+        console.log(html);
+        $("#gallery").append(html);
+      }
+
+      $(function () {
+        console.log("onready is alive");
+        addImage();
+      });

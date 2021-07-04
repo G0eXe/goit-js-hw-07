@@ -1,42 +1,26 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Задание 2</title>
     <style>
-      p {
-        color: red;
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        background-color: #fff;
+        color: #424242;
+        line-height: 1.5;
       }
     </style>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script>
-      const ingredients = [
-        "Картошка",
-        "Грибы",
-        "Чеснок",
-        "Помидоры",
-        "Зелень",
-        "Приправы",
-      ];
-
-      function addIngredients() {
-        let html = "";
-
-        for (var key in ingredients) {
-          html = html + `<li>${ingredients[key]}</li>`;
-        }
-
-        console.log(html);
-        $("#ingredients").append(html);
-      }
-
-      $(function () {
-        console.log("onready is alive");
-        addIngredients();
-      });
-    </script>
   </head>
-
   <body>
-    <ul id="ingredients" />
+    <p><a href="index.html">На главную</a></p>
+
+    <ul id="ingredients"></ul>
+
+    <script src="js/task-02.js" type="module"></script>
   </body>
 </html>
