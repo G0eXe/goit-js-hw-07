@@ -1,15 +1,8 @@
-function addImage() {
-        let count = 0;
+const categoryItem = document.querySelectorAll('.item');
+console.log(`'В списке ${categoryItem.length}'`);
 
-        $("#categories li h2").each(function (i) {
-          ++count;
-          console.log($(this).text());
-        });
-
-        console.log(count);
-      }
-
-      $(function () {
-        console.log("onready is alive");
-        addImage();
-      });
+const categoryList = document.querySelectorAll('.item');
+categoryList.forEach(category => {
+  console.log('Категория:', category.querySelector('h2').textContent);
+  console.log('Категория элементов', category.querySelectorAll('li').length);
+});

@@ -12,18 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-      function addImage() {
-        let html = "";
 
-        for (var key in images) {
-          html = html + `<li><img src=${images[key].url}></li>`;
-        }
+const gallery = document.querySelector('#gallery');
+gallery.classList.add('gallery');
 
-        console.log(html);
-        $("#gallery").append(html);
-      }
+const galleryMarkup = images.reduce((add, { url, alt }) => {
+  return (
+    add + `<li><img src= ${url} alt='${alt}'/></li>`
+  );
+}, '');
 
-      $(function () {
-        console.log("onready is alive");
-        addImage();
-      });
+gallery.insertAdjacentHTML('afterbegin', galleryMarkup);

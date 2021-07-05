@@ -1,22 +1,18 @@
-const refs = {
-  targetBtnIncr: document.querySelector('[data-action="increment"]'),
-  targetBtnDecr: document.querySelector('[data-action="decrement"]'),
-  summary: document.getElementById('value'),
-};
+let counterValue = 0;
+const increment = document.querySelector('[data-action="increment"]');
+const decrement = document.querySelector('[data-action="decrement"]');
 
-refs.targetBtnIncr.addEventListener('click', increment);
-refs.targetBtnDecr.addEventListener('click', decrement);
+const sumValue = document.querySelector('#value');
 
-let count = 0;
+function incrementClick() {
+  counterValue += 1;
+  sumValue.textContent = counterValue;
+}
 
-      function decrement() {
-        --count;
-        $("#value").text(count);
-        console.log(count);
-      }
+function decrementClick() {
+  counterValue -= 1;
+  sumValue.textContent = counterValue;
+}
 
-      function increment() {
-        ++count;
-        $("#value").text(count);
-        console.log(count);
-      }
+increment.addEventListener('click', incrementClick);
+decrement.addEventListener('click', decrementClick);
